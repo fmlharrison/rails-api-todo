@@ -9,6 +9,7 @@ class TodosController < ApplicationController
 
   # POST /todos
   def create
+    # The "!" after the create in order to rasie an invalid exception. 
     @todo = Todo.create!(todo_params)
     json_response(@todo, :created)
   end
