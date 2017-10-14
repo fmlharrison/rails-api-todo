@@ -1,5 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe Item, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  # Assotiation tests
+  # Test that the Item model belongs to a Todo.
+  it { should belong_to(:todo) }
+
+  # Validation tests
+  # Ensure that the column name is present before saving
+  it { should validate_presence_of(:name) }
 end
